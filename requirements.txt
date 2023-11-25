@@ -1,0 +1,10 @@
+tensorflow
+keras
+opencv-python-headless
+numpy
+streamlit
+streamlit-chat 
+langchain
+google-generativeai
+python-dotenv
+Pillow
