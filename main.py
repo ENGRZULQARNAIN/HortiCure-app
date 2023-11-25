@@ -37,7 +37,7 @@ def palm_chat():
 
     if "messages" not in st.session_state.keys():
         st.session_state.messages = [
-            {"role": "assistant", "content": "Ask me a questions about plants and plant diseases like Rusty Plants and Powdery Mildew Plants etc!"}
+            {"role": "assistant", "content": "Ask me questions about plants and plant diseases like Rusty Plants and Powdery Mildew Plants etc!"}
         ]
 
     if prompt := st.chat_input("Say something. . . . ."):
@@ -113,7 +113,7 @@ class Ui:
         st.title("🌿HortiCure🍀")
 
     def ui_image_load(self):
-        st.sidebar.title("Disease Detection 🔎")
+        st.sidebar.warning("Disease Detection 🔎")
 
 
         img_file = st.sidebar.file_uploader("Upload your image here :floppy_disk:", type=["jpg", "png"])
