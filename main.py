@@ -113,7 +113,7 @@ class Ui:
         st.title("🌿HortiCure🍀")
 
     def ui_image_load(self):
-        st.sidebar.title("Disease Detection 🔎")
+        st.sidebar.warning("Disease Detection 🔎")
 
 
         img_file = st.sidebar.file_uploader("Upload your image here :floppy_disk:", type=["jpg", "png"])
