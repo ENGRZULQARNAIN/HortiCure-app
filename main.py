@@ -6,7 +6,7 @@ import tensorflow as tf
 import google.generativeai as palm
 from langchain.llms import google_palm
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv,find_dotenv
 import base64
 
 
@@ -32,7 +32,7 @@ import google.generativeai as palm
 import streamlit as st
 
 def palm_chat():
-    load_dotenv()
+    load_dotenv(find_dotenv())
     palm.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 
     if "messages" not in st.session_state.keys():
