@@ -73,13 +73,13 @@ def palm_chat():
 
 
 
-#class of My Model which consisit of related things to my model loading predicting etc..
+#class of My Model which consist of related things to my model loading predicting etc..
 class MyModel:
     def __init__(self) -> None:
         pass
 
     # Load the saved model using tf.keras.models.load_model
-    def load_saved_model(self, model_path="./model/1/"):
+    def load_saved_model(self, model_path="./model"):
         model = tf.keras.models.load_model(model_path)
         return model
 
