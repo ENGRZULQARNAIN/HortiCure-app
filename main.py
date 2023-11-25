@@ -134,8 +134,8 @@ class Ui:
         image = np.array(image)
         return image 
     def show_result(self,label,confidence):
-        st.sidebar.header(f"HEALTH STATUS: {label}")
-        st.sidebar.header(f"CONFEDINCE: {int(confidence)}%")
+        st.sidebar.success(f"HEALTH STATUS: {label}")
+        st.sidebar.error(f"CONFIDENCE: {int(confidence)}%")
 
     ####chatbot-Section#######
     def chat_bot_interface(self):
