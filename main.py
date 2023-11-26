@@ -15,12 +15,16 @@ st.markdown("""
 .block-container {
   padding-top: 0.5rem;
 }
-.sidebar-header {
-  position: fixed;
-  top:;
-  left: ;
-  right: 5;
-  z-index: 0;
+.sidebar .sidebar-content {
+  padding-top: 0;
+}
+
+.sidebar .sidebar-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
 }
 </style>
 """, unsafe_allow_html=True)
