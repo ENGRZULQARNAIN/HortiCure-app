@@ -67,7 +67,7 @@ class Ui:
         st.title("🌿HortiCure🍀")
 
     def ui_image_load(self):
-        st.sidebar.warning(st.header("Detect your Disease here🔎"))
+        st.sidebar.warning("Detect your Disease here🔎")
 
 
         img_file = st.sidebar.file_uploader("Upload your image here :floppy_disk:", type=["jpg", "png"])
@@ -94,7 +94,7 @@ class Ui:
     ####chatbot-Section#######
     def chat_bot_interface(self):
         #palm_chat()
-        for i in range(10):
+        for i in range(5):
              st.header("This area is under development!")
     
 
