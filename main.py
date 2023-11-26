@@ -20,7 +20,7 @@ st.markdown("""
 }
 
 .sidebar .sidebar-header {
-  position: sticky;
+  position: absolute;
   top: 0;
   width: 100%;
   background-color: #fff;
