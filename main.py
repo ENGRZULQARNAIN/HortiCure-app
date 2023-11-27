@@ -99,8 +99,7 @@ class Ui:
     def chat_bot_interface(self):
         #palm_chat()
         for i in range(5):
-             st.header("This area is under development!")
-""    
+             st.header("This area is under development!") 
 
     
 if __name__ == "__main__":
