@@ -4,8 +4,8 @@ from PIL import Image
 import streamlit as st
 import tensorflow as tf
 import os
-from chat_bot import chat
 import base64
+from chat_bot import chat
 
 
 #Streamlit page setup and configuration.
@@ -15,18 +15,23 @@ st.markdown("""
 .block-container {
   padding-top: 0.5rem;
 }
-.sidebar-header {
-  position: fixed;
-  top:;
-  left: ;
-  right: 5;
-  z-index: 0;
+.sidebar .sidebar-content {
+  padding-top: 0;
+}
+
+.sidebar .sidebar-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
 }
 </style>
 """, unsafe_allow_html=True)
 
 
-#class of My Model which consisit of related things to my model loading predicting etc..
+
+#class of My Model which consist of related things to my model loading predicting etc..
 class MyModel:
     def __init__(self) -> None:
         pass
@@ -66,7 +71,7 @@ class Ui:
         st.title("🌿HortiCure🍀")
 
     def ui_image_load(self):
-        st.sidebar.warning(st.header("Detect your plant disease here🔎"))
+        st.sidebar.header("Detect your Disease here🔎")
 
 
         img_file = st.sidebar.file_uploader("Upload your image here :floppy_disk:", type=["jpg", "png"])
@@ -92,11 +97,10 @@ class Ui:
 
     ####chatbot-Section#######
     def chat_bot_interface(self):
-        #chat()
-        for i in range(10):
-            st.header("This area is under development!")
-
-    
+        #palm_chat()
+        for i in range(5):
+             st.header("This area is under development!")
+""    
 
     
 if __name__ == "__main__":
