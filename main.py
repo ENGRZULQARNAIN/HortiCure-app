@@ -37,7 +37,7 @@ class MyModel:
         pass
 
     # Load the saved model using tf.keras.models.load_model
-    def load_saved_model(self, model_path="./model/1/"):
+    def load_saved_model(self, model_path="./model"):
         model = tf.keras.models.load_model(model_path)
         return model
 
