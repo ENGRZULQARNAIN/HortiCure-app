@@ -6,6 +6,23 @@ import tensorflow as tf
 import os
 import base64
 from chat_bot import chat
+import os
+from dotenv import load_dotenv,find_dotenv
+import streamlit as st
+
+
+####################################################################
+
+
+
+
+#####################################################################
+
+
+
+
+
+
 
 
 #Streamlit page setup and configuration.

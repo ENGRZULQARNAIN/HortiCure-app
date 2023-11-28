@@ -1,14 +1,13 @@
 import os
 from dotenv import load_dotenv,find_dotenv
 import streamlit as st
-import google.generativeai as palm
-import replicate
+import google.generativeai as palmgit 
 load_dotenv(find_dotenv())
 
 
 def chat():
     
-    #palm.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+    palm.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 
     if "messages" not in st.session_state.keys():
         st.session_state.messages = [
@@ -43,10 +42,3 @@ def chat():
                 st.write(response.last)
                 message = {"role": "assistant", "content": response.last}
                 st.session_state.messages.append(message)
-
-
-
-
-
-if __name__ == "__main__":
-    chat()
