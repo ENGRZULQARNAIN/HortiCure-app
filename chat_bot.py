@@ -44,7 +44,7 @@ def chat():
                 if prompt== None:
                     prompt="hi"
                 #response = palm.chat(context=my_context, messages=prompt)
-                response=chat.predict(prompt)
+                response=chat.predict(input=prompt)
                 st.write(response)
                 message = {"role": "assistant", "content": response}
                 st.session_state.messages.append(message)
