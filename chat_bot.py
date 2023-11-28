@@ -4,12 +4,16 @@ import streamlit as st
 import google.generativeai as palm
 load_dotenv(find_dotenv())
 from langchain.chat_models import ChatGooglePalm
+from langchain.chains import ConversationChain
+from langchain.memory import ConversationBufferMemory
 
 def chat():
     
     google_api_key= st.secrets['GOOGLE_API_KEY']
     llm=ChatGooglePalm(google_api_key=google_api_key,temperature=0.5)
     
+    chat=ConversationChain(llm=llm,memory=ConversationBufferMemory())
+
     if "messages" not in st.session_state.keys():
         st.session_state.messages = [
             {"role": "assistant", "content": "Ask me a questions about plants and plant diseases like Rusty Plants and Powdery Mildew Plants etc!"}
@@ -40,7 +44,7 @@ def chat():
                 if prompt== None:
                     prompt="hi"
                 #response = palm.chat(context=my_context, messages=prompt)
-                response=llm.predict(prompt)
+                response=chat.predict(prompt)
                 st.write(response)
                 message = {"role": "assistant", "content": response}
                 st.session_state.messages.append(message)
