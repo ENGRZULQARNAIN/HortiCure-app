@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv,find_dotenv
 import streamlit as st
-import google.generativeai as palmgit 
+import google.generativeai as palm
 load_dotenv(find_dotenv())
 
 
