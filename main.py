@@ -1,3 +1,9 @@
+#####################################################################
+# Author: Engr.Zulqar Nain                                          #
+# Date:28.11.2023                                                   #
+# Project title: HortiCure                                          #
+#####################################################################
+
 import cv2
 import numpy as np
 from PIL import Image
@@ -10,21 +16,7 @@ import os
 from dotenv import load_dotenv,find_dotenv
 import streamlit as st
 
-
-####################################################################
-
-
-
-
-#####################################################################
-
-
-
-
-
-
-
-
+#------------------------------------------------------------------------------------
 #Streamlit page setup and configuration.
 st.set_page_config(page_title="HortiCure🍀",page_icon="✅",layout="wide",initial_sidebar_state="expanded")
 st.markdown("""
@@ -44,7 +36,7 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
-
+#------------------------------------------------------------------------------------
 
 
 #class of My Model which consist of related things to my model loading predicting etc..
@@ -75,25 +67,23 @@ class MyModel:
 
             return classes[index], confidence * 100
         else:
-            return "Still No Image uploaded", 0.0
+            return "Still No Image Sample uploaded", 0.0
 
 
-
+#------------------------------------------------------------------------------------
 #This ou UI class which is consist of related things to UI 
-# ...
-
 class Ui:
     def __init__(self):
         st.title("🌿HortiCure🍀")
 
     def ui_image_load(self):
-        st.sidebar.header("Detect your Disease here🔎")
+        st.sidebar.header("Detect your Disease Here 🔎")
 
 
-        img_file = st.sidebar.file_uploader("Upload your image here :floppy_disk:", type=["jpg", "png"])
+        img_file = st.sidebar.file_uploader("Upload your image Sample Here :floppy_disk:", type=["jpg", "png"])
         if img_file is not None:
             image = self.read_file_as_image(img_file)  # Use self here
-            st.sidebar.image(image, caption="Uploaded Image", use_column_width=True)
+            st.sidebar.image(image, caption="Uploaded Sample", use_column_width=True)
             return image
 
 
@@ -114,9 +104,8 @@ class Ui:
     ####chatbot-Section#######
     def chat_bot_interface(self):
         chat()
-        #for i in range(5):
-             #st.header("This area is under development!") 
 
+#------------------------------------------------------------------------------------
     
 if __name__ == "__main__":
     # class instances
@@ -141,3 +130,4 @@ if __name__ == "__main__":
     st.write("Copyright ©2023  @zulqarnainhumbly258@gmail.com")
 
 
+#------------------------------------------------------------------------------------
