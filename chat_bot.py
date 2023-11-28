@@ -12,7 +12,7 @@ def chat():
     google_api_key= st.secrets['GOOGLE_API_KEY']
     llm=ChatGooglePalm(google_api_key=google_api_key,temperature=0.5)
     
-    chat=ConversationChain(llm=llm,memory=ConversationBufferMemory())
+    chat=ConversationChain(llm=llm,verbose=True,memory=ConversationBufferMemory())
 
     if "messages" not in st.session_state.keys():
         st.session_state.messages = [
