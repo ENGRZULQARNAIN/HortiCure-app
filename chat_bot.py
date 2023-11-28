@@ -3,12 +3,13 @@ from dotenv import load_dotenv,find_dotenv
 import streamlit as st
 import google.generativeai as palm
 load_dotenv(find_dotenv())
-
+from langchain.chat_models import ChatGooglePalm
 
 def chat():
     
-    palm.configure(api_key=os.getenv('GOOGLE_API_KEY'))
-
+    google_api_key=os.getenv('GOOGLE_API_KEY')
+    llm=ChatGooglePalm(google_api_key=google_api_key,temperature=0.5)
+    
     if "messages" not in st.session_state.keys():
         st.session_state.messages = [
             {"role": "assistant", "content": "Ask me a questions about plants and plant diseases like Rusty Plants and Powdery Mildew Plants etc!"}
@@ -38,7 +39,8 @@ def chat():
             with st.spinner("Thinking..."):
                 if prompt== None:
                     prompt="hi"
-                response = palm.chat(context=my_context, messages=prompt)
+                #response = palm.chat(context=my_context, messages=prompt)
+                response=llm.predict(prompt)
                 st.write(response.last)
                 message = {"role": "assistant", "content": response.last}
                 st.session_state.messages.append(message)
