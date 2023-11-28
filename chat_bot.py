@@ -7,7 +7,7 @@ from langchain.chat_models import ChatGooglePalm
 
 def chat():
     
-    google_api_key=os.getenv('GOOGLE_API_KEY')
+    google_api_key=os.getenv('GOOGLE_API_KEY') or st.secrets['GOOGLE_API_KEY']
     llm=ChatGooglePalm(google_api_key=google_api_key,temperature=0.5)
     
     if "messages" not in st.session_state.keys():
