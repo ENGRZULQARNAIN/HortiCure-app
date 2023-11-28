@@ -8,3 +8,4 @@ langchain
 google-generativeai
 python-dotenv
 Pillow
+replicate

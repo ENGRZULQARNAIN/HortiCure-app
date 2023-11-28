@@ -15,10 +15,9 @@ st.markdown("""
 .block-container {
   padding-top: 0.5rem;
 }
-.sidebar .sidebar-content {
-  padding-top: 0;
+.st-emotion-cache-16txtl3 {
+    padding: 0 1.5rem;
 }
-
 .sidebar .sidebar-header {
   position: absolute;
   top: 0;
@@ -97,9 +96,9 @@ class Ui:
 
     ####chatbot-Section#######
     def chat_bot_interface(self):
-        #palm_chat()
-        for i in range(5):
-             st.header("This area is under development!") 
+        chat()
+        #for i in range(5):
+             #st.header("This area is under development!") 
 
     
 if __name__ == "__main__":
