@@ -39,22 +39,22 @@ st.markdown("""
 #------------------------------------------------------------------------------------
 
 
-#class of My Model which consist of related things to my model loading predicting etc..
+#class of MyModel which consist of related things to traind model, loading, predicting etc..
 class MyModel:
     def __init__(self) -> None:
         pass
 
-    # Load the saved model using tf.keras.models.load_model
+    # Loading the saved model using tf.keras.models.load_model
     def load_saved_model(self, model_path="./model"):
         model = tf.keras.models.load_model(model_path)
         return model
 
-    # Your single_predict function
+    # function whcich prdict a single sample
     def single_predict(self, model, image):
         classes = ["HEALTHY ✅", "POWDERY ❎", "RUST ❎"]
 
         if image is not None:
-            # Convert the PIL Image to a NumPy array
+            # to Convert the PIL Image to a NumPy array
             image = np.array(image)
             image = image / 255.0  # Normalize the image
             input_arr = np.array([image])
@@ -71,16 +71,16 @@ class MyModel:
 
 
 #------------------------------------------------------------------------------------
-#This ou UI class which is consist of related things to UI 
+#This is our UI class which is consist of related things to UI 
 class Ui:
     def __init__(self):
         st.title("🌿HortiCure🍀")
 
     def ui_image_load(self):
-        st.sidebar.header("Detect your Disease Here 🔎")
+        st.sidebar.header("Detect your Disease Here! 🔎")
 
 
-        img_file = st.sidebar.file_uploader("Upload your image Sample Here :floppy_disk:", type=["jpg", "png"])
+        img_file = st.sidebar.file_uploader("Upload your image Sample Here :floppy_disk:", type=["jpg", "jpeg","png",])
         if img_file is not None:
             image = self.read_file_as_image(img_file)  # Use self here
             st.sidebar.image(image, caption="Uploaded Sample", use_column_width=True)
@@ -98,6 +98,8 @@ class Ui:
         image = np.array(image)
         return image 
     def show_result(self,label,confidence):
+        if label=="HEALTHY ✅":
+            st.balloons()
         st.sidebar.success(f"HEALTH STATUS: {label}")
         st.sidebar.error(f"CONFEDINCE: {int(confidence)}%")
 
@@ -128,6 +130,6 @@ if __name__ == "__main__":
     st.sidebar.write("Powerd by Zulqar Nain")
     
     st.write("Copyright ©2023  @zulqarnainhumbly258@gmail.com")
-
+    
 
 #------------------------------------------------------------------------------------
