@@ -45,11 +45,8 @@ class MyModel:
         pass
 
     # Loading the saved model using tf.keras.models.load_model
-    def load_saved_model(self, model_path="./model"):
-        from tensorflow import keras
-
-        model = keras.layers.TFSMLayer("./model", call_endpoint="serving_default")  # Adjust call_endpoint if needed
-
+    def load_saved_model(self, model_path="./model.h5"):
+        model = tf.keras.models.load_model(model_path)
         return model
 
     # function whcich prdict a single sample
