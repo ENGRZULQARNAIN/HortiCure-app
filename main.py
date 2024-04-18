@@ -46,7 +46,10 @@ class MyModel:
 
     # Loading the saved model using tf.keras.models.load_model
     def load_saved_model(self, model_path="./model"):
-        model = tf.keras.models.load_model(model_path)
+        from tensorflow import keras
+
+        model = keras.layers.TFSMLayer("./model", call_endpoint="serving_default")  # Adjust call_endpoint if needed
+
         return model
 
     # function whcich prdict a single sample
