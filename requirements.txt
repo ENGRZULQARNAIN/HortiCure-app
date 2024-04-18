@@ -1,5 +1,5 @@
 tensorflow
-keras
+keras==3.0.0
 opencv-python-headless
 numpy
 streamlit
@@ -8,4 +8,3 @@ langchain
 google-generativeai
 python-dotenv
 Pillow
-replicate
