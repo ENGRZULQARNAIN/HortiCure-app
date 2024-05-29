@@ -8,3 +8,6 @@ langchain
 google-generativeai
 python-dotenv
 Pillow
+langchain-google-genai 
+langchain-community
+langchain-core
