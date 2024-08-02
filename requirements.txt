@@ -11,3 +11,4 @@ Pillow
 langchain-google-genai 
 langchain-community
 langchain-core
+langchain-groq 0.1.9
