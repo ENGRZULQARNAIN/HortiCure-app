@@ -36,7 +36,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 # chat=ChatGoogleGenerativeAI(model="gemini-1.5-flash",convert_system_message_to_human=True)
 llm = ChatGroq(temperature=0.3,
-               model_name="Llama3-70b-8192",
+               model_name="llama-3.1-70b-versatile",
                max_tokens=254,
                model_kwargs={
                    "top_p": 1,
