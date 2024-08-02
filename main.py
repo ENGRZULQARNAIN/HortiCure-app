@@ -129,7 +129,7 @@ if __name__ == "__main__":
 
     st.sidebar.write("Powerd by Zulqar Nain")
     
-    st.write("Copyright ©2023  @zulqarnainhumbly258@gmail.com")
+    st.write("Copyright ©2024  @zulqarnainhumbly258@gmail.com")
     
 
 #------------------------------------------------------------------------------------
